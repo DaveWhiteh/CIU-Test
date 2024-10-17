@@ -1,0 +1,123 @@
+:root {
+    /* Primary Colours */
+    --white: #FFF;
+    --black: #000;
+    --grey: #D9D9D9;
+    --green: #39e344;
+    --blue: #3983e3;
+    --dark-blue: #112e8c;
+    /* Tints */
+    --light-blue: #98bef0;
+}
+
+/* --------------------------------------------------------------------------------------- Text/Padding/Margin */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 110%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------------------- Containers */
+
+.container-wrapper {
+    padding: 2rem 0; 
+}
+
+.container-wrapper-1 {
+    padding: 1rem 0;
+}
+
+/* --------------------------------------------------------------------------------------- Background Colors */
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-grey {
+    background-color: var(--grey);
+}
+
+.bg-dark-blue {
+    background-color: var(--dark-blue);
+}
+
+/* --------------------------------------------------------------------------------------- Text Colors */
+
+.text-black {
+    color: var(--black);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-grey {
+    color: var(--grey);
+}
+
+.text-dark-blue {
+    color: var(--dark-blue);
+}
+
+.text-light-blue {
+    color: var(--light-blue);
+}
+
+/* --------------------------------------------------------------------------------------- Navbar */
+
+
+.search-box {
+    height: 42px;
+    border-radius: 2px;
+    background-color: var(--light);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.50) inset;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.search-box input {
+    border: none;
+    background: none;
+    padding: 5px;
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+.search-box button {
+    background-color: var(--mid-grey);
+    border-radius: 0;
+    width: 42px;
+    border: none;
+    transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+
+.search-box button:hover {
+    background-color: var(--dark-grey);
+}
+
+.search-box button i {
+    font-size: 20px;
+    line-height: unset;
+}
+
+.search-box input:focus,
+.search-box input:focus-visible {
+    box-shadow: 0px 0px 0px 2px var(--blue) inset;
+    border: none !important;
+    outline: none !important;
+}
+
+/* --------------------------------------------------------------------------------------- Home Page */
+
+.img-logo {
+    width: 120px;
+}
