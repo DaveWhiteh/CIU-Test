@@ -45,7 +45,7 @@
 <body>
     <header>
         <div class="fixed-top">
-            <nav class="navbar container navbar-expand-xl">
+            <nav class="navbar container navbar-expand-xl d-none d-lg-flex">
                 <!-- Logo -->
                 <div class="col-12 col-lg-4 my-auto">
                     <a href="{% url 'home' %}" class="navbar-brand">
@@ -114,6 +114,30 @@
                     </ul>
                 </div>
             </nav>
+        </div>
+
+        <div class="row">
+            <nav class="navbar w-100 navbar-expand-lg px-3">
+                <!-- Upper Nav Bar - Mobile -->
+                {% include 'includes/mobile-nav.html' %}
+            </nav>
+        </div>
+
+        <!-- Mobile Search Collapsible -->
+        <div class="collapse" id="collapse-search">
+            <div class="row d-block d-lg-none bg-light">
+                <div class="col-12 px-3 py-2">
+                    <form method="GET" action="">
+                        <div class="search-box">
+                            <input type="text" name="q" placeholder="Search our products" aria-label="Search our products">
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                                <span class="sr-only">Submit your search</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </header>
 

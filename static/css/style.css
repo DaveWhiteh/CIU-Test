@@ -24,6 +24,10 @@ body {
 
 /* --------------------------------------------------------------------------------------- Containers */
 
+.header-container {
+    padding-top: 95px;
+}
+
 .container-wrapper {
     padding: 2rem 0; 
 }
@@ -70,6 +74,9 @@ body {
 
 /* --------------------------------------------------------------------------------------- Navbar */
 
+.img-logo {
+    width: 120px;
+}
 
 .search-box {
     height: 42px;
@@ -118,6 +125,8 @@ body {
 
 /* --------------------------------------------------------------------------------------- Home Page */
 
-.img-logo {
-    width: 120px;
+.jumbotron {
+    background: url('/media/jumbotron-desktop.jpg');
+    background-size: cover;
+    height: 100vh;
 }
