@@ -8,6 +8,7 @@
     --dark-blue: #112e8c;
     /* Tints */
     --light-blue: #98bef0;
+    --dark-green: #33cc3d;
 }
 
 /* --------------------------------------------------------------------------------------- Text/Padding/Margin */
@@ -127,6 +128,47 @@ body {
 
 .jumbotron {
     background: url('/media/jumbotron-desktop.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 65vh;
+    position: relative;
+}
+
+
+
+.btn {
+    background-color: var(--green);
+    border: var(--green);
+}
+
+.btn:hover {
+    background-color: var(--dark-green);
+}
+
+.icon {
+    color: var(--white);
+}
+
+.icon-blue {
+    color: var(--dark-blue);
+}
+
+
+
+
+
+@media screen and (min-width: 992px) {
+    .jumbotron {
+        background-position: initial;
+        position: relative;
+    }
+    
+    .display-4 {
+        position: absolute;
+        top: 4rem;
+    }
 }
