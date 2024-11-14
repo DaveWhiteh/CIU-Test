@@ -40,8 +40,12 @@ body {
     font-size: 120%;
 }
 
-.text-smaller {
+.text-small {
     font-size: 95%;
+}
+
+.text-smaller {
+    font-size: 85%;
 }
 
 /* --------------------------------------------------------------------------------------- Containers */
@@ -83,6 +87,10 @@ body {
     color: var(--grey);
 }
 
+.text-blue {
+    color: var(--blue);
+}
+
 .text-dark-blue {
     color: var(--dark-blue);
 }
@@ -121,7 +129,7 @@ body {
 }
 
 .search-box input {
-    font-size: 0.8rem;
+    box-shadow: 0px 0px 6px 0px rgba(57, 131, 227, 1) inset;
 }
 
 /* --------------------------------------------------------------------------------------- Home Page */
@@ -138,7 +146,18 @@ body {
     position: relative;
 }
 
+.card {
+    border: none;
+    box-shadow:  10px 5px 20px var(--grey);
+}
 
+.card-body {
+    height: 100%;
+}
+
+.product-image {
+    padding: 1.25rem;
+}
 
 
 
