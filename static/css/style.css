@@ -144,6 +144,10 @@ body {
     box-shadow: 0px 0px 6px 0px rgba(57, 131, 227, 1) inset;
 }
 
+.nav-border {
+    border-bottom: 1px solid var(--grey);
+}
+
 /* --------------------------------------------------------------------------------------- Home Page */
 
 .jumbotron {
@@ -154,8 +158,13 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    height: 65vh;
+    height: 75vh;
     position: relative;
+    padding-bottom: 3rem;
+}
+
+.display-4 {
+    font-size: 3rem;
 }
 
 .card {
@@ -207,7 +216,31 @@ body {
     color: var(--dark-green) !important;
 }
 
+.footer-logo-position {
+    position: relative;
+}
 
+.footer-logo {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+}
+
+/* --------------------------------------------------------------------------------------- Media Queries */
+
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        height: 65vh;
+    }
+
+    .display-4 {
+        font-size: 3.5rem;
+    }
+
+    .text-footer {
+        font-size: 100%;
+    }
+}
 
 @media screen and (min-width: 992px) {
     .jumbotron {
