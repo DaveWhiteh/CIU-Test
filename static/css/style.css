@@ -36,6 +36,10 @@ body {
     font-weight: 500;
 }
 
+.text-italic {
+    font-style: italic;
+}
+
 .text-larger {
     font-size: 120%;
 }
