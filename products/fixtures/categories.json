@@ -1,0 +1,34 @@
+[
+	{
+		"pk": 1,
+		"model": "products.category",
+		"fields": {
+			"name": "Mountain",
+			"friendly_name": "Mountain"
+		}
+	},
+	{
+		"pk": 2,
+		"model": "products.category",
+		"fields": {
+			"name": "Gravel",
+			"friendly_name": "Gravel"
+		}
+	},
+	{
+		"pk": 3,
+		"model": "products.category",
+		"fields": {
+			"name": "Road",
+			"friendly_name": "Road"
+		}
+	},
+	{
+		"pk": 4,
+		"model": "products.category",
+		"fields": {
+			"name": "Hybrid",
+			"friendly_name": "Hybrid"
+		}
+	}
+]
