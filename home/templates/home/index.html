@@ -15,7 +15,7 @@
             <h1 class="display-4 text-white text-medium">Crank-It Up</h1>
             <p class="text-larger text-white mb-1">Find your next bike here.</p>
             <p class="text-larger text-white">Feel alive!</p>
-            <a class="btn btn-primary btn-lg mt-2" href="#" role="button">Search Bikes</a>
+            <a class="btn btn-primary btn-lg mt-2" href="{% url 'products' %}" role="button">Search Bikes</a>
         </div>
     </div>
 
@@ -99,100 +99,42 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="card product no-border h-100">
-                        <a href="">
-                            <img src="media/bike.jpg" class="card-img-top product-image w-100" alt="">
-                        </a>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
+                {% for product in products %}
+                    {% if product.is_active and product.is_featured %}
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="card product no-border h-100">
+                                {% if product.image %}
                                     <a href="">
-                                        <h5 class="card-title text-semibold text-dark-blue">Cube</h5>
+                                        <img src="{{ product.image.url }}" class="card-img-top img-fluid product-image w-100" alt="{{ product.model_name }}">
                                     </a>
-                                </div>
-                            </div>
-                            <p class="card-text text-semibold text-dark-blue text-small">Attention Bike</p>
-                            <div class="row mb-4">
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text text-medium text-black text-smaller">Size: <span class="text-italic">Large</span></p>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text text-medium text-black text-smaller">Type: <span class="text-italic">Mountain</span></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <p class="card-text text-semibold text-blue">£499.99</p>
+                                {% else %}
+                                    <a href="">
+                                        <img src="{{ MEDIA_URL }}noimage.jpg" class="card-img-top img-fluid product-image w-100" alt="{{ product.model_name }}">
+                                    </a>
+                                {% endif %}
+                                <div class="card-body">
+                                    <a href="">
+                                        <h5 class="card-title text-semibold text-dark-blue">{{ product.brand_name }}</h5>
+                                    </a>
+                                    <p class="card-text text-semibold text-dark-blue text-small">{{ product.model_name }}</p>
+                                    <div class="row mb-4">
+                                        <div class="col-12 col-md-6">
+                                            <p class="card-text text-medium text-black text-smaller">Size: <span class="text-italic">{{ product.size }}</span></p>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <p class="card-text text-medium text-black text-smaller">Type: <span class="text-italic">{{ product.type }}</span></p>
+                                        </div>
+                                    </div>
+                                        <p class="card-text text-semibold text-blue">£{{ product.price }}</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="card product no-border">
-                        <a href="">
-                            <img src="media/bike.jpg" class="card-img-top product-image w-100" alt="">
-                        </a>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <a href="">
-                                        <h5 class="card-title text-semibold text-dark-blue">Cube</h5>
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="card-text text-semibold text-dark-blue text-small">Attention Bike</p>
-                            <div class="row mb-4">
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text text-medium text-black text-smaller">Size: <span class="text-italic">Large</span></p>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text text-medium text-black text-smaller">Type: <span class="text-italic">Mountain</span></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <p class="card-text text-semibold text-blue">£499.99</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="card product no-border">
-                        <a href="">
-                            <img src="media/bike.jpg" class="card-img-top product-image w-100" alt="">
-                        </a>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <a href="">
-                                        <h5 class="card-title text-semibold text-dark-blue">Cube</h5>
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="card-text text-semibold text-dark-blue text-small">Attention Bike</p>
-                            <div class="row mb-4">
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text text-medium text-black text-smaller">Size: <span class="text-italic">Large</span></p>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <p class="card-text text-medium text-black text-smaller">Type: <span class="text-italic">Mountain</span></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <p class="card-text text-semibold text-blue">£499.99</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {% endif %}
+                {% endfor %}
             </div>
-            <div class="row mt-3 mt-lg-5">
+            <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <a class="btn btn-primary btn-lg mt-2" href="#" role="button">Search all bikes</a>
+                    <a class="btn btn-primary btn-lg mt-2" href="{% url 'products' %}" role="button">Search all bikes</a>
                 </div>
             </div>
         </div>
@@ -211,7 +153,7 @@
                     <h3 class="text-register text-dark-blue text-medium mb-5">Crank-It Up, dedicated towards
                         finding you your next bike adventure!</h3>
                     <p class="text-dark-blue">Search for your next bike today.</p>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Search Bikes</a>
+                    <a class="btn btn-primary btn-lg" href="{% url 'products' %}" role="button">Search Bikes</a>
                 </div>
             </div>
         </div>
