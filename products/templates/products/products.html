@@ -10,11 +10,74 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            {{ products }}
+    <div class="product-main-image d-flex align-items-center mb-0">
+        <div class="container">
+            <h2 class="text-center text-white text-medium">Products</h2>
+            <p class="text-center text-larger text-white mb-1">Find your next bike here.</p>
         </div>
     </div>
-</div>
+
+    <div class="container-fluid bg-dark-blue text-center px-4 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-larger text-white mb-0">All Products</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-products">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 my-auto order-md-last d-flex justify-content-end">
+                    <div class="sort-select-wrapper">
+                        <select id="sort-selector" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == "None_None"%}selected{% endif %}>Sort by...</option>
+                            <option value="price_asc" {% if current_sorting == "price_asc"%}selected{% endif %}>Price (low to high)</option>
+                            <option value="price_desc" {% if current_sorting == "price_desc"%}selected{% endif %}>Price (high to low)</option>
+                            <option value="rating_asc" {% if current_sorting == "rating_asc"%}selected{% endif %}>Rating (low to high)</option>
+                            <option value="rating_desc" {% if current_sorting == "rating_desc"%}selected{% endif %}>Rating (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == "name_asc"%}selected{% endif %}>Name (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == "name_desc"%}selected{% endif %}>Name (Z-A)</option>
+                            <option value="category_asc" {% if current_sorting == "category_asc"%}selected{% endif %}>Category (A-Z)</option>
+                            <option value="category_desc" {% if current_sorting == "category_desc"%}selected{% endif %}>Category (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="card product no-border h-100">
+                            {% if product.image %}
+                                <a href="">
+                                    <img src="{{ product.image.url }}" class="card-img-top img-fluid product-image w-100" alt="{{ product.model_name }}">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img src="{{ MEDIA_URL }}noimage.jpg" class="card-img-top img-fluid product-image w-100" alt="{{ product.model_name }}">
+                                </a>
+                            {% endif %}
+                            <div class="card-body">
+                                <a href="">
+                                    <h5 class="card-title text-semibold text-dark-blue">{{ product.brand_name }}</h5>
+                                </a>
+                                <p class="card-text text-semibold text-dark-blue text-small">{{ product.model_name }}</p>
+                                <div class="row mb-4">
+                                    <div class="col-12 col-md-6">
+                                        <p class="card-text text-medium text-black text-smaller">Size: <span class="text-italic">{{ product.size }}</span></p>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <p class="card-text text-medium text-black text-smaller">Type: <span class="text-italic">{{ product.type }}</span></p>
+                                    </div>
+                                </div>
+                                    <p class="card-text text-semibold text-blue">£{{ product.price }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

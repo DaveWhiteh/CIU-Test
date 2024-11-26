@@ -58,6 +58,11 @@ body {
     padding-top: 95px;
 }
 
+.container-products {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+}
+
 .container-wrapper {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -222,6 +227,16 @@ body {
     height: 65vh;
 }
 
+/* --------------------------------------------------------------------------------------- Products Page */
+
+.product-main-image {
+    height: 55vh;
+    background-image: url('/media/products.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40% center;
+}
+
 /* --------------------------------------------------------------------------------------- Footer */
 
 .footer-media a i:hover,
@@ -235,10 +250,20 @@ body {
     position: relative;
 }
 
+.footer-border {
+    border-top: 1.75px solid var(--dark-blue);
+    z-index: -1;
+}
+
 .footer-logo {
     position: absolute;
     top: 0;
     transform: translateY(-50%);
+}
+
+.footer-logo-products {
+    background-color: var(--white);
+    padding: 0px 1px;
 }
 
 /* --------------------------------------------------------------------------------------- Media Queries */
