@@ -52,6 +52,10 @@ body {
     font-size: 85%;
 }
 
+.text-uppercase {
+    text-transform: uppercase;
+}
+
 /* --------------------------------------------------------------------------------------- Containers */
 
 .header-container {
@@ -279,6 +283,12 @@ body {
 
     .text-footer {
         font-size: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .header-container {
+        padding-top: 167px;
     }
 }
 
