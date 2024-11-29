@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="card no-border">
-                        <a href="">
+                        <a href="{% url 'products' %}?category=Mountain">
                             <img src="media/category_mountain.jpg" alt="" class="card-img">
                             <div class="image-overlay d-flex justify-content-center align-items-center">
                                 <h4 class="card-title text-white">Mountain</h4>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="card no-border">
-                        <a href="">
+                        <a href="{% url 'products' %}?category=Gravel">
                             <img src="media/category_gravel.jpg" alt="" class="card-img">
                             <div class="image-overlay d-flex justify-content-center align-items-center">
                                 <h4 class="card-title text-white">Gravel</h4>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 mb-4 mb-md-0">
                     <div class="card no-border">
-                        <a href="">
+                        <a href="{% url 'products' %}?category=Road">
                             <img src="media/category_road.jpg" alt="" class="card-img">
                             <div class="image-overlay d-flex justify-content-center align-items-center">
                                 <h4 class="card-title text-white">Road</h4>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 mb-4 mb-md-0">
                     <div class="card no-border">
-                        <a href="">
+                        <a href="{% url 'products' %}?category=Hybrid">
                             <img src="media/category_hybrid.jpg" alt="" class="card-img">
                             <div class="image-overlay d-flex justify-content-center align-items-center">
                                 <h4 class="card-title text-white">Hybrid</h4>
@@ -104,16 +104,16 @@
                         <div class="col-12 col-md-6 col-lg-4 mb-4">
                             <div class="card product no-border h-100">
                                 {% if product.image %}
-                                    <a href="">
+                                    <a href="{% url 'product_detail' product.id %}">
                                         <img src="{{ product.image.url }}" class="card-img-top img-fluid product-image w-100" alt="{{ product.model_name }}">
                                     </a>
                                 {% else %}
-                                    <a href="">
+                                    <a href="{% url 'product_detail' product.id %}">
                                         <img src="{{ MEDIA_URL }}noimage.jpg" class="card-img-top img-fluid product-image w-100" alt="{{ product.model_name }}">
                                     </a>
                                 {% endif %}
                                 <div class="card-body">
-                                    <a href="">
+                                    <a href="{% url 'product_detail' product.id %}">
                                         <h5 class="card-title text-semibold text-dark-blue">{{ product.brand_name }}</h5>
                                     </a>
                                     <p class="card-text text-semibold text-dark-blue text-small">{{ product.model_name }}</p>

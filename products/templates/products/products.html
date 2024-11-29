@@ -12,17 +12,21 @@
 {% block content %}
     <div class="product-main-image d-flex align-items-center mb-0">
         <div class="container">
-            <h2 class="text-center text-white text-medium">Products</h2>
-            <p class="text-center text-larger text-white mb-1">Find your next bike here.</p>
         </div>
     </div>
 
     <div class="container-fluid bg-dark-blue text-center px-4 py-4">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <p class="text-larger text-white mb-0">All Products</p>
-                </div>
+                {% if current_category %}
+                    <div class="col-12">
+                        <p class="text-larger text-white mb-0">{% if current_category.name == 'Mountain' %}Mountain{% elif current_category.name == 'Gravel' %}Gravel{% elif current_category.name == 'Road' %}Road{% elif current_category.name == 'Hybrid' %}Hybrid{% else %}{% endif %} Bikes</p>
+                    </div>
+                {% else %}
+                    <div class="col-12">
+                        <p class="text-larger text-white mb-0">All Bikes</p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
