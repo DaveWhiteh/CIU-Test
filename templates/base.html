@@ -127,9 +127,6 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
-
     <!-- footer starts -->
     <footer class="bg-color-black footer-logo-position {% if '/products/' in request.path %}footer-border{% else %}{% endif %}">
         <div class="container">
@@ -170,6 +167,14 @@
         </div>
     </footer><!-- footer -->
     <!-- footer ends -->
+
+    {% block postloadjs %}
+    {% endblock %}
+
+
+
+
+
 </body>
 
 </html>
