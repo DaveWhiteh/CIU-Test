@@ -56,6 +56,10 @@ body {
     text-transform: uppercase;
 }
 
+.line-height {
+    line-height: 2;
+}
+
 /* --------------------------------------------------------------------------------------- Containers */
 
 .header-container {
