@@ -79,7 +79,13 @@
                                         <p class="card-text text-medium text-black text-smaller">Size: <span class="text-italic">{{ product.size }}</span></p>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <p class="card-text text-medium text-black text-smaller">Type: <span class="text-italic">{{ product.type }}</span></p>
+                                        {% if product.category %}
+                                            <p class="card-text text-medium text-black text-smaller">Type: 
+                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                    <span class="text-italic">{{ product.category.friendly_name }}</span>
+                                                </a>                                           
+                                            </p>
+                                        {% endif %}
                                     </div>
                                 </div>
                                     <p class="card-text text-semibold text-blue">£{{ product.price }}</p>

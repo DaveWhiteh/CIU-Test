@@ -29,7 +29,13 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <h2 class="text-semibold text-dark-blue mb-3">{{ product.brand_name }}</h2>
                     <h4 class="text-semibold text-dark-blue mb-3">{{ product.model_name }}</h4>
-                    <p class="text-semibold text-black text-small"><span class="text-uppercase">Type:</span> <span class="text-dark-blue">{{ product.type }}</span></p>
+                    {% if product.category %}
+                        <p class="text-semibold text-black text-small"><span class="text-uppercase">Type:</span> 
+                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <span class="text-dark-blue">{{ product.category.friendly_name }}</span>
+                            </a>
+                        </p>
+                    {% endif %}
                     <p class="text-black">{{ product.description}}</p>
                     <p class="text-medium text-black text-smaller"><span class="text-uppercase">Size:</span> <span class="text-blue text-italic">{{ product.size }}</span></p>
                     <p class="text-medium text-black text-smaller"><span class="text-uppercase">Colour:</span> <span class="text-blue text-italic">{{ product.colour }}</span></p>
