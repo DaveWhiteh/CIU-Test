@@ -37,13 +37,13 @@
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                     <div class="sort-select-wrapper">
                         <select id="sort-selector" name="custom-select custom-select-sm rounded-0 border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                            <option value="reset" {% if current_sorting == "None_None"%}selected{% endif %}>Sort by...</option>
-                            <option value="price_asc" {% if current_sorting == "price_asc"%}selected{% endif %}>Price (low to high)</option>
-                            <option value="price_desc" {% if current_sorting == "price_desc"%}selected{% endif %}>Price (high to low)</option>
-                            <option value="name_asc" {% if current_sorting == "name_asc"%}selected{% endif %}>Name (A-Z)</option>
-                            <option value="name_desc" {% if current_sorting == "name_desc"%}selected{% endif %}>Name (Z-A)</option>
-                            <option value="category_asc" {% if current_sorting == "category_asc"%}selected{% endif %}>Category (A-Z)</option>
-                            <option value="category_desc" {% if current_sorting == "category_desc"%}selected{% endif %}>Category (Z-A)</option>
+                            <option value="reset" {% if current_sorting == "None-None"%}selected{% endif %}>Sort by...</option>
+                            <option value="price-asc" {% if current_sorting == "price-asc"%}selected{% endif %}>Price (low to high)</option>
+                            <option value="price-desc" {% if current_sorting == "price-desc"%}selected{% endif %}>Price (high to low)</option>
+                            <option value="brand_name-asc" {% if current_sorting == "brand_name-asc"%}selected{% endif %}>Brand (A-Z)</option>
+                            <option value="brand_name-desc" {% if current_sorting == "brand_name-desc"%}selected{% endif %}>Brand (Z-A)</option>
+                            <option value="category-asc" {% if current_sorting == "category-asc"%}selected{% endif %}>Category (A-Z)</option>
+                            <option value="category-desc" {% if current_sorting == "category-desc"%}selected{% endif %}>Category (Z-A)</option>
                         </select>
                     </div>
                 </div>
@@ -102,8 +102,8 @@
 
             var selectedVal = selector.val();
             if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+                var sort = selectedVal.split("-")[0];
+                var direction = selectedVal.split("-")[1];
 
                 currentUrl.searchParams.set("sort", sort);
                 currentUrl.searchParams.set("direction", direction);
