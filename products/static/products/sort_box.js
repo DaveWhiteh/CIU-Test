@@ -7,8 +7,8 @@ $('#sort-selector').change(function() {
 
     var selectedVal = selector.val();
     if(selectedVal != "reset"){
-        var sort = selectedVal.split("_")[0];
-        var direction = selectedVal.split("_")[1];
+        var sort = selectedVal.split("-")[0];
+        var direction = selectedVal.split("-")[1];
 
         currentUrl.searchParams.set("sort", sort);
         currentUrl.searchParams.set("direction", direction);
@@ -20,4 +20,4 @@ $('#sort-selector').change(function() {
 
         window.location.replace(currentUrl);
     }
-});
+})
