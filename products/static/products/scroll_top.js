@@ -12,7 +12,7 @@ button.addEventListener('click', function() {
 });
 
 function scrollFunction() {
-    if (document.documentElement.scrollTop > 20) {
+    if (document.documentElement.scrollTop > 240) {
         button.style.display = "block";
     } else {
         button.style.display = "none";

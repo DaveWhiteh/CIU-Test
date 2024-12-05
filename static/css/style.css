@@ -131,12 +131,34 @@ body {
 /* --------------------------------------------------------------------------------------- Buttons */
 
 .btn {
-    background-color: var(--green);
+    background-color: transparent;
     border: var(--green);
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
 }
 
-.btn:hover {
+.btn-green {
+    background-color: var(--green);
+    color: var(--white);
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.btn-green:hover {
     background-color: var(--dark-green);
+    color: var(--white);
+}
+
+.btn-backtoproducts {
+    color: var(--dark-blue);
+}
+
+.btn-backtoproducts:hover {
+    text-decoration: underline;
 }
 
 /* --------------------------------------------------------------------------------------- Icons */
@@ -271,6 +293,13 @@ body {
     cursor: pointer;
 }
 
+/* --------------------------------------------------------------------------------------- Product Details Page */
+
+.input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
 /* --------------------------------------------------------------------------------------- Footer */
 
 .footer-media a i:hover,
@@ -315,7 +344,7 @@ body {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (max-width: 991px) {
     .header-container {
         padding-top: 167px;
     }

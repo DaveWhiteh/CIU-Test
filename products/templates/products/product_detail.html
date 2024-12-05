@@ -11,6 +11,12 @@
 
 {% block content %}
     <div class="container-wrapper">
+        <div class="container">
+            <!--Back Button-->
+            <span class="btn btn-backtoproducts">
+                <a onclick="history.back()" aria-label="Go back to previous page"><i class="fa-solid fa-angle-left"></i> Back to products</a>
+            </span>
+        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
@@ -36,10 +42,31 @@
                             </a>
                         </p>
                     {% endif %}
-                    <p class="text-black">{{ product.description}}</p>
+                    <p class="text-black text-small">{{ product.description}}</p>
                     <p class="text-medium text-black text-smaller"><span class="text-uppercase">Size:</span> <span class="text-blue text-italic">{{ product.size }}</span></p>
                     <p class="text-medium text-black text-smaller"><span class="text-uppercase">Colour:</span> <span class="text-blue text-italic">{{ product.colour }}</span></p>
-                    <p class="text-semibold text-dark-blue text-larger mt-4">£{{ product.price }}</p>
+                    <p class="text-semibold text-dark-blue text-larger mt-4 mb-4">£{{ product.price }}</p>
+                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12 col-md-4">
+                                <div class="form-group w-100">
+                                    <div class="input-group">
+                                        <p class="text-semibold mr-2">Qty:</p>
+                                        <input class="form-control qty_input border-radius" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="form-group w-100">
+                                    <div class="input-group">
+                                        <input type="submit" class="btn btn-green btn-block" value="Add to Basket">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
