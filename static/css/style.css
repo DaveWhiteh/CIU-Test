@@ -9,6 +9,7 @@
     /* Tints */
     --light-blue: #98bef0;
     --dark-green: #33cc3d;
+    --dark-grey: #aeaeae;
 }
 
 /* --------------------------------------------------------------------------------------- Text/Padding/Margin */
@@ -58,6 +59,10 @@ body {
 
 .line-height {
     line-height: 2;
+}
+
+.b-radius {
+    border-radius: 0.25rem;
 }
 
 /* --------------------------------------------------------------------------------------- Containers */
@@ -133,6 +138,9 @@ body {
 .btn {
     background-color: transparent;
     border: var(--green);
+}
+
+.btn-transition {
     transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -142,15 +150,21 @@ body {
 .btn-green {
     background-color: var(--green);
     color: var(--white);
-    transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
 }
 
 .btn-green:hover {
     background-color: var(--dark-green);
     color: var(--white);
+}
+
+.btn-grey {
+    background-color: var(--grey);
+    color: var(--dark-blue);
+}
+
+.btn-grey:hover {
+    background-color: var(--dark-grey);
+    color: var(--dark-blue);
 }
 
 .btn-backtoproducts {
@@ -298,6 +312,26 @@ body {
 .input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------------------- Basket Page */
+
+thead th:first-child {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+   
+   thead th:last-child {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.table-products {
+    border-bottom: 1px solid var(--grey);
+}
+
+.table-price{
+    border-bottom: 1px solid var(--dark-blue);
 }
 
 /* --------------------------------------------------------------------------------------- Footer */

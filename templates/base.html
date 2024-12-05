@@ -60,7 +60,7 @@
                             <input class="form-control border border-black rounded-3" type="text" name="q"
                                 placeholder="Search our products">
                             <div class="input-group-append">
-                                <button class="form-control btn btn-green border border-black rounded-3" type="submit">
+                                <button class="form-control btn btn-green btn-transition border border-black rounded-3" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
                                     </span>
@@ -128,13 +128,13 @@
     {% endblock %}
 
     <!-- footer starts -->
-    <footer class="bg-color-black footer-logo-position {% if '/products/' in request.path %}footer-border{% else %}{% endif %}">
+    <footer class="bg-color-black footer-logo-position {% if '/products/' or '/bag/' in request.path %}footer-border{% else %}{% endif %}">
         <div class="container">
             <div class="row d-flex justify-content-sm-center justify-content-md-between mb-5">
                 <!-- Logo -->
                 <div class="col-12 col-lg-4 my-auto">
                     <a href="{% url 'home' %}" class="navbar-brand">
-                        <img src="/media/logo_v1.png" alt="CIU-Test Logo" id="ciu-logo" class="img-logo footer-logo {% if '/products/' in request.path %}footer-logo-products{% else %}{% endif %}">
+                        <img src="/media/logo_v1.png" alt="CIU-Test Logo" id="ciu-logo" class="img-logo footer-logo {% if '/products/' or '/bag/' in request.path %}footer-logo-products{% else %}{% endif %}">
                     </a>
                 </div>
             </div>
