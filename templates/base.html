@@ -134,7 +134,7 @@
                 <!-- Logo -->
                 <div class="col-12 col-lg-4 my-auto">
                     <a href="{% url 'home' %}" class="navbar-brand">
-                        <img src="/media/logo_v1.png" alt="CIU-Test Logo" id="ciu-logo" class="img-logo footer-logo {% if '/products/' or '/bag/' in request.path %}footer-logo-products{% else %}{% endif %}">
+                        <img src="/media/logo_v1.png" alt="CIU-Test Logo" id="ciu-logo" class="img-logo footer-logo {% if '/products/' in request.path %}footer-logo-products{% elif '/bag/' in request.path %}footer-logo-products{% else %}{% endif %}">
                     </a>
                 </div>
             </div>
