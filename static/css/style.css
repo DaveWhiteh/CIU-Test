@@ -209,6 +209,28 @@ body {
     border: none;
 }
 
+/* --------------------------------------------------------------------------------------- Toasts */
+
+.message-position {
+    position: relative !important;
+}
+
+.message-container {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+    width: 350px;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 /* --------------------------------------------------------------------------------------- Navbar */
 
 .img-logo {
